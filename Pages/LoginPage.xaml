@@ -1,0 +1,31 @@
+﻿<Page x:Class="WpfApp1.Pages.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Title="LoginPage">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
+            <TextBlock Text="Логин" Margin="5"/>
+            <TextBox x:Name="LoginUsernameTextBox" Margin="5"/>
+            <TextBlock Text="Пароль" Margin="5"/>
+            <PasswordBox x:Name="LoginPasswordBox" Margin="5"/>
+            <Button Content="Войти" Click="LoginButton_Click" Margin="5"/>
+
+
+            <TextBlock Text="Логин" Margin="5"/>
+            <TextBox x:Name="RegisterUsernameTextBox" Margin="5"/>
+            <TextBlock Text="Пароль" Margin="5"/>
+            <PasswordBox x:Name="RegisterPasswordBox" Margin="5"/>
+            <TextBlock Text="Роль" Margin="5"/>
+            <ComboBox x:Name="RoleComboBox" Margin="5">
+                <ComboBoxItem Content="Оператор"/>
+                <ComboBoxItem Content="Техник"/>
+                <ComboBoxItem Content="Администратор"/>
+            </ComboBox>
+            <Button Content="Регистрация" Click="RegisterButton_Click" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Page>

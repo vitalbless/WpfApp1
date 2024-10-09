@@ -1,0 +1,48 @@
+﻿<Page x:Class="WpfApp1.Pages.PageMain"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      Title="PageMain">
+
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Сервисный центр" FontSize="20" Margin="10"/>
+            <ListView x:Name="RequestsListView" SelectionChanged="RequestsListView_SelectionChanged" Margin="10">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Id" DisplayMemberBinding="{Binding RequestId}" Width="50"/>
+                        <GridViewColumn Header="Описание" DisplayMemberBinding="{Binding Description}" Width="150"/>
+                        <GridViewColumn Header="Статус" DisplayMemberBinding="{Binding Status}" Width="100"/>
+                        <GridViewColumn Header="Комментарий техника" DisplayMemberBinding="{Binding TechnicianComments}" Width="150"/>
+                        <GridViewColumn Header="Создатель" DisplayMemberBinding="{Binding CreatedBy.Username}" Width="100"/>
+                        <GridViewColumn Header="Дата создания" DisplayMemberBinding="{Binding CreatedAt}" Width="100"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <GroupBox Header="Создание заявки" Margin="10" x:Name="CreateRequestGroupBox">
+                <StackPanel>
+                    <TextBlock Text="Описание" Margin="5"/>
+                    <TextBox x:Name="DescriptionTextBox" Margin="5"/>
+                    <Button Content="Сохранить" Click="CreateRequestButton_Click" Margin="5"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Изменение заявки" Margin="10" x:Name="EditRequestGroupBox">
+                <StackPanel>
+                    <TextBlock Text="Статус" Margin="5"/>
+                    <ComboBox x:Name="StatusComboBox" Margin="5">
+                        <ComboBoxItem Content="Pending"/>
+                        <ComboBoxItem Content="In Progress"/>
+                        <ComboBoxItem Content="Completed"/>
+                        <ComboBoxItem Content="On Hold"/>
+                    </ComboBox>
+                    <TextBlock Text="Комментарий" Margin="5"/>
+                    <TextBox x:Name="TechnicianCommentsTextBox" Margin="5"/>
+                    <Button   x:Name="SaveChangesButton" Content="Сохранить" Click="SaveChangesButton_Click" Margin="5"/>
+                </StackPanel>
+            </GroupBox>
+            <Button Content="Выйти" Click="LogoutButton_Click" Margin="10" HorizontalAlignment="Left"/>
+        </StackPanel>
+    </Grid>
+</Page>
